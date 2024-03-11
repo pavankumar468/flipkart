@@ -22,8 +22,8 @@ public class User {
             strategy = GenerationType.SEQUENCE,
             generator = "user_sequence"
     )
-    private Long user_id;
-    private String user_name;
+    private Long userId;
+    private String userName;
     private String email;
     private String password;
 

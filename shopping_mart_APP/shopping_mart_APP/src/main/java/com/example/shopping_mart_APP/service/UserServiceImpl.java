@@ -16,10 +16,11 @@ public class UserServiceImpl implements UserServiceInterface {
     @Override
     public User registerUser(String userName, String email, String password) {
         User user =  new User();
-        user.setUser_name(userName);
+        user.setUserName(userName);
         user.setEmail(email);
         user.setPassword(password);
-        if(userRepo.findByUserName(userName) && userRepo.findByEmail(email)){
+
+        if(userRepo.findByUserName(userName)==false && userRepo.findByEmail(email)== false){
             return userRepo.save(user);
         }else{
             throw new RuntimeException("unable to register user ");
